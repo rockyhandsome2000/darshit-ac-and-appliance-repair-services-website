@@ -1,1 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Darshit AC & Home Appliance Repair Services</title>
+  <meta name="description" content="Darshit AC & Home Appliance Repair Services - AC repair, AC service and home appliance repair. Call or WhatsApp us today.">
+
+  <style>
+    :root{
+      --primary:#1261a0;
+      --dark:#0a3d62;
+      --orange:#f59e0b;
+      --green:#16a34a;
+      --ink:#122033;
+      --muted:#617084;
+      --bg:#f7fafc;
+      --white:#ffffff;
+      --shadow:0 10px 30px rgba(10,61,98,.12);
+      --radius:18px;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.6;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(1150px,92%);
+      margin:auto;
+    }
+
+    /* HEADER */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(10px);
+      box-shadow:0 2px 15px rgba(0,0,0,.08);
+    }
+
+    .nav{
+      min-height:75px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--dark);
+      font-weight:800;
+      font-size:18px;
+    }
+
+    .logo img{
+      width:52px;
+      height:52px;
+      object-fit:cover;
+      border-radius:12px;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:24px;
+    }
+
+    nav a{
+      color:var(--ink);
+      font-weight:600;
+    }
+
+    nav a:hover{
+      color:var(--primary);
+    }
+
+    .nav-buttons{
+      display:flex;
+      gap:8px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:12px 18px;
+      border-radius:10px;
+      font-weight:700;
+      transition:.25s;
+      border:none;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-call{
+      background:var(--primary);
+      color:white;
+    }
+
+    .btn-whatsapp{
+      background:var(--green);
+      color:white;
+    }
+
+    /* HERO */
+    .hero{
+      padding:70px 0;
+      background:linear-gradient(135deg,#eef8ff,#ffffff);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      align-items:center;
+      gap:45px;
+    }
+
+    .hero h1{
+      font-size:clamp(35px,5vw,58px);
+      line-height:1.1;
+      color:var(--dark);
+      margin-bottom:20px;
+    }
+
+    .hero h1 span{
+      color:var(--primary);
+    }
+
+    .hero p{
+      color:var(--muted);
+      font-size:18px;
+      margin-bottom:25px;
+      max-width:620px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .hero-image{
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      display:block;
+    }
+
+    .hero-image img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+      transition:.3s;
+    }
+
+    .hero-image:hover img{
+      transform:scale(1.03);
+    }
+
+    /* COMMON */
+    section{
+      padding:75px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:45px;
+    }
+
+    .section-title h2{
+      color:var(--dark);
+      font-size:34px;
+      margin-bottom:8px;
+    }
+
+    .section-title p{
+      color:var(--muted);
+    }
+
+    /* SERVICES */
+    .services{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .service-card{
+      background:white;
+      padding:28px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      text-align:center;
+      transition:.25s;
+    }
+
+    .service-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .service-icon{
+      font-size:42px;
+      margin-bottom:12px;
+    }
+
+    .service-card h3{
+      color:var(--dark);
+      margin-bottom:8px;
+    }
+
+    .service-card p{
+      color:var(--muted);
+    }
+
+    /* GALLERY */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .gallery-item{
+      display:block;
+      overflow:hidden;
+      border-radius:16px;
+      background:white;
+      box-shadow:var(--shadow);
+    }
+
+    .gallery-item.large{
+      grid-column:span 2;
+      grid-row:span 2;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:240px;
+      object-fit:cover;
+      transition:.35s;
+    }
+
+    .gallery-item.large img{
+      height:496px;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.06);
+    }
+
+    /* CONTACT */
+    .contact-box{
+      background:linear-gradient(135deg,var(--dark),var(--primary));
+      color:white;
+      padding:50px 30px;
+      border-radius:25px;
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+
+    .contact-box h2{
+      font-size:35px;
+      margin-bottom:10px;
+    }
+
+    .contact-box p{
+      opacity:.9;
+      margin-bottom:25px;
+    }
+
+    .contact-buttons{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .contact-buttons .btn{
+      background:white;
+      color:var(--dark);
+    }
+
+    .contact-buttons .whatsapp{
+      background:var(--green);
+      color:white;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#061f33;
+      color:white;
+      padding:30px 0;
+      text-align:center;
+    }
+
+    footer p{
+      opacity:.85;
+      margin:5px 0;
+    }
+
+    footer a{
+      color:#fff;
+    }
+
+    /* FLOATING BUTTONS */
+    .floating-buttons{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:999;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .floating{
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-size:24px;
+      box-shadow:0 8px 20px rgba(0,0,0,.2);
+    }
+
+    .floating-call{
+      background:var(--primary);
+    }
+
+    .floating-whatsapp{
+      background:var(--green);
+    }
+
+    /* MOBILE */
+    @media(max-width:850px){
+
+      .nav{
+        padding:10px 0;
+        flex-wrap:wrap;
+      }
+
+      nav{
+        order:3;
+        width:100%;
+        justify-content:center;
+        gap:15px;
+        padding-bottom:8px;
+      }
+
+      nav a{
+        font-size:14px;
+      }
+
+      .nav-buttons{
+        margin-left:auto;
+      }
+
+      .hero{
+        padding:45px 0;
+      }
+
+      .hero-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+      }
+
+      .hero-image img{
+        height:300px;
+      }
+
+      .services{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .gallery{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .gallery-item.large{
+        grid-column:span 2;
+      }
+
+      .gallery-item.large img{
+        height:350px;
+      }
+    }
+
+    @media(max-width:560px){
+
+      .logo span{
+        font-size:14px;
+      }
+
+      .logo img{
+        width:45px;
+        height:45px;
+      }
+
+      .nav-buttons .btn{
+        padding:9px 11px;
+        font-size:13px;
+      }
+
+      nav{
+        gap:10px;
+      }
+
+      nav a{
+        font-size:13px;
+      }
+
+      .hero h1{
+        font-size:36px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .hero-buttons{
+        flex-direction:column;
+      }
+
+      .hero-buttons .btn{
+        width:100%;
+      }
+
+      .services{
+        grid-template-columns:1fr;
+      }
+
+      .gallery{
+        grid-template-columns:1fr;
+      }
+
+      .gallery-item.large{
+        grid-column:span 1;
+      }
+
+      .gallery-item img,
+      .gallery-item.large img{
+        height:260px;
+      }
+
+      .section-title h2{
+        font-size:28px;
+      }
+
+      .contact-box{
+        padding:35px 20px;
+      }
+
+      .contact-box h2{
+        font-size:28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container nav">
+
+    <!-- Logo bhi clickable -->
+    <a href="index.html" class="logo">
+      <img src="assets/logo.jpg" alt="Darshit AC Logo">
+      <span>Darshit AC & Appliance</span>
+    </a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-buttons">
+      <a class="btn btn-call" href="tel:7383435331">
+        📞 Call
+      </a>
+
+      <a class="btn btn-whatsapp"
+         href="https://wa.me/917383435331?text=Hello%20Darshit%20AC%20%26%20Home%20Appliance%20Repair%20Services%2C%20I%20need%20a%20service."
+         target="_blank">
+        WhatsApp
+      </a>
+    </div>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div>
+      <h1>
+        Darshit <span>AC & Home Appliance</span> Repair Services
+      </h1>
+
+      <p>
+        Professional AC repair, AC service and home appliance repair
+        services. Fast service, reliable work and affordable pricing.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a class="btn btn-call" href="tel:7383435331">
+          📞 Call Now: 7383435331
+        </a>
+
+        <a class="btn btn-whatsapp"
+           href="https://wa.me/917383435331?text=Hello%20Darshit%20AC%20%26%20Home%20Appliance%20Repair%20Services%2C%20I%20need%20a%20service."
+           target="_blank">
+          💬 WhatsApp Us
+        </a>
+
+      </div>
+    </div>
+
+
+    <!-- Hero image clickable -->
+    <a href="assets/ac-repair-1.jpg"
+       target="_blank"
+       class="hero-image">
+
+      <img src="assets/ac-repair-1.jpg"
+           alt="AC Repair Service">
+
+    </a>
+
+  </div>
+</section>
+
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Professional repair and service for your home appliances</p>
+    </div>
+
+    <div class="services">
+
+      <div class="service-card">
+        <div class="service-icon">❄️</div>
+        <h3>AC Repair</h3>
+        <p>
+          Fast and reliable AC repair for cooling problems,
+          water leakage and other faults.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>AC Service</h3>
+        <p>
+          Complete AC servicing and maintenance for better
+          cooling and performance.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Home Appliances</h3>
+        <p>
+          Repair and maintenance services for home appliances
+          with professional workmanship.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Our Work Gallery</h2>
+      <p>Click any image to open it in full size</p>
+    </div>
+
+    <div class="gallery">
+
+      <!-- 1 -->
+      <a href="assets/ac-repair-1.jpg"
+         target="_blank"
+         class="gallery-item large">
+
+        <img src="assets/ac-repair-1.jpg"
+             alt="AC Repair Work">
+
+      </a>
+
+
+      <!-- 2 -->
+      <a href="assets/ac-repair-2.jpg"
+         target="_blank"
+         class="gallery-item">
+
+        <img src="assets/ac-repair-2.jpg"
+             alt="AC Repair Service">
+
+      </a>
+
+
+      <!-- 3 -->
+      <a href="assets/ac-service-1.jpg"
+         target="_blank"
+         class="gallery-item">
+
+        <img src="assets/ac-service-1.jpg"
+             alt="AC Service">
+
+      </a>
+
+
+      <!-- 4 -->
+      <a href="assets/ac-service-2.jpg"
+         target="_blank"
+         class="gallery-item">
+
+        <img src="assets/ac-service-2.jpg"
+             alt="AC Service Work">
+
+      </a>
+
+
+      <!-- 5 -->
+      <a href="assets/ac-service-3.jpg"
+         target="_blank"
+         class="gallery-item">
+
+        <img src="assets/ac-service-3.jpg"
+             alt="AC Maintenance">
+
+      </a>
+
+
+      <!-- 6 -->
+      <a href="assets/tools.jpg"
+         target="_blank"
+         class="gallery-item">
+
+        <img src="assets/tools.jpg"
+             alt="AC Repair Tools">
+
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+
+    <div class="contact-box">
+
+      <h2>Need AC Repair or Service?</h2>
+
+      <p>
+        Contact Darshit AC & Home Appliance Repair Services today.
+      </p>
+
+      <div class="contact-buttons">
+
+        <a class="btn"
+           href="tel:7383435331">
+          📞 Call 7383435331
+        </a>
+
+        <a class="btn whatsapp"
+           href="https://wa.me/917383435331?text=Hello%20Darshit%20AC%20%26%20Home%20Appliance%20Repair%20Services%2C%20I%20need%20a%20service."
+           target="_blank">
+          💬 Chat on WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="container">
+
+    <p>
+      © 2026 Darshit AC & Home Appliance Repair Services
+    </p>
+
+    <p>
+      📞
+      <a href="tel:7383435331">
+        7383435331
+      </a>
+    </p>
+
+    <p>
+      💬
+      <a
+        href="https://wa.me/917383435331?text=Hello%20Darshit%20AC%20%26%20Home%20Appliance%20Repair%20Services%2C%20I%20need%20a%20service."
+        target="_blank">
+        WhatsApp
+      </a>
+    </p>
+
+  </div>
+
+</footer>
+
+
+<!-- FLOATING BUTTONS -->
+<div class="floating-buttons">
+
+  <a
+    class="floating floating-whatsapp"
+    href="https://wa.me/917383435331?text=Hello%20Darshit%20AC%20%26%20Home%20Appliance%20Repair%20Services%2C%20I%20need%20a%20service."
+    target="_blank"
+    aria-label="WhatsApp">
+    💬
+  </a>
+
+  <a
+    class="floating floating-call"
+    href="tel:7383435331"
+    aria-label="Call">
+    📞
+  </a>
+
+</div>
+
+</body>
+  </html>
